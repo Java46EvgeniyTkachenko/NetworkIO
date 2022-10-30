@@ -34,11 +34,10 @@ class LoggerServerTests {
 	static void closeConnection() throws Exception {
 		socket.close();
 	}
-
+	
 	@Test
-
 	@Order(1)
-	void AtestError() throws Exception {
+	void AtestWriteError() throws Exception {
 		logger.setLevel(Level.ERROR);
 		logger.error("error message");
 
@@ -52,7 +51,7 @@ class LoggerServerTests {
 
 	@Test
 	@Order(2)
-	void BtestWarn() throws Exception {
+	void BtestWriteWarn() throws Exception {
 		logger.setLevel(Level.WARN);
 		logger.warn("warn message");
 
@@ -63,7 +62,7 @@ class LoggerServerTests {
 
 	@Test
 	@Order(3)
-	void CtestInfo() throws Exception {
+	void CtestWriteInfo() throws Exception {
 		logger.setLevel(Level.INFO);
 		logger.info("info message");
 
@@ -74,7 +73,7 @@ class LoggerServerTests {
 
 	@Test
 	@Order(4)
-	void DtestDebug() throws Exception {
+	void DtestWriteDebug() throws Exception {
 		logger.setLevel(Level.DEBUG);
 		logger.debug("debug message");
 
@@ -85,7 +84,7 @@ class LoggerServerTests {
 
 	@Test
 	@Order(5)
-	void EtestTrace() throws Exception {
+	void EtestWriteTrace() throws Exception {
 		logger.setLevel(Level.TRACE);
 		logger.trace("trace message");
 		String response = input.readLine();
